@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Camera Multi Capture
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Camera Multi-Capture Test</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <h1>Camera Multi-Capture Test</h1>
+    
+    <ion-button expand="block" (click)="openCamera()" [disabled]="isCapturing">
+      <ion-icon name="camera" slot="start"></ion-icon>
+      Open Camera
+    </ion-button>
+    
+    <!-- Camera overlay has been moved to the dedicated camera page -->
+    
+    <div *ngIf="captureError" class="error-message">
+      <p><strong>Error:</strong> {{ captureError }}</p>
+    </div>
+    
+    <div class="status-container">
+      <h3>Permission Status: <span [ngClass]="{'permission-granted': permissionStatus === 'granted', 'permission-denied': permissionStatus === 'denied', 'permission-unknown': permissionStatus === 'unknown'}">{{ permissionStatus }}</span></h3>
+      
+      <h3>Status Log:</h3>
+      <div class="status-log">
+        <p *ngFor="let message of statusMessages">{{ message }}</p>
+      </div>
+    </div>
+    {{ capturedImages | json  }}
+    
+   
+  </div>
+</ion-content>
