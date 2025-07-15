@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { CameraMultiCapture, CameraOverlayResult, initialize } from 'camera-multi-capture';
 import { NavController } from '@ionic/angular';
+import { CameraMultiCapture, CameraOverlayResult, initialize } from 'camera-multi-capture';
 
 @Component({
   selector: 'app-camera',

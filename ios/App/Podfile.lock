@@ -44,7 +44,7 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor/status-bar"
 
 SPEC CHECKSUMS:
-  CameraMultiCapture: 162beffab9ed051424e75e4004896da022fe4b31
+  CameraMultiCapture: 2c77afcde161f91d39f2d6488b2158674563d670
   Capacitor: 03bc7cbdde6a629a8b910a9d7d78c3cc7ed09ea7
   CapacitorApp: febecbb9582cb353aed037e18ec765141f880fe9
   CapacitorCamera: 6e73f1fc6c629a672658705a02409b60854bc0f1
