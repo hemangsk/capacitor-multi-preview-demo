@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { NavController } from '@ionic/angular';
-import { CameraMultiCapture, CameraOverlayResult, initialize } from 'camera-multi-capture';
+import { CameraImageData, CameraMultiCapture, CameraOverlayOptions, CameraOverlayResult, initialize } from 'camera-multi-capture';
 
 @Component({
   selector: 'app-camera',
@@ -16,36 +16,40 @@ export class CameraPage implements OnInit {
   capturedImages: string[] = [];
   capturedPhoto: string = '';
   statusMessages: string[] = [];
-  
+  cameraOverlayOptions: CameraOverlayOptions = {
+    quality: 90,
+    containerId: 'camera-container'
+  }
   constructor(private navCtrl: NavController) { }
-  
+
   ngOnInit() {
     // Apply transparent class to app root for maximum transparency
     document.querySelector('ion-app')?.classList.add('camera-mode');
     // Start the camera when the page loads
   }
-  
+
   async ionViewDidEnter() {
-    const result: CameraOverlayResult = await initialize({
+    const cameraInitOptions = {
       quality: 90,
       containerId: 'camera-container'
-    });
-    this.capturedImages = result.images.map(image =>  image.uri);
+    }
+
+    const result: CameraOverlayResult = await initialize(cameraInitOptions);
+    this.capturedImages = result.images.map((image: CameraImageData) => image.uri);
 
     // go back
     this.close();
   }
-  
+
   // Add a status message
   addStatus(message: string) {
-    console.log(message);
     this.statusMessages.push(message);
     // Keep only the last 5 messages
     if (this.statusMessages.length > 5) {
       this.statusMessages.shift();
     }
   }
-  
+
   async close() {
     try {
       this.addStatus('Stopping camera...');
@@ -68,7 +72,7 @@ export class CameraPage implements OnInit {
           }
         });
       }
-      
+
     }
   }
 }

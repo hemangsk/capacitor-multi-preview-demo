@@ -48,6 +48,7 @@ export class HomePage {
         this.capturedPhoto = state['capturedPhoto'];
       }
     }
+    this.addStatus('Camera data checked');
   }
 
   async openCamera() {

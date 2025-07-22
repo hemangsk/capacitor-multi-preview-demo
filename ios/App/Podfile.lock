@@ -16,7 +16,7 @@ PODS:
     - Capacitor
 
 DEPENDENCIES:
-  - CameraMultiCapture (from `../../../capacitor-plugins/packages/camera-multi-capture`)
+  - CameraMultiCapture (from `../../node_modules/camera-multi-capture`)
   - "Capacitor (from `../../node_modules/@capacitor/ios`)"
   - "CapacitorApp (from `../../node_modules/@capacitor/app`)"
   - "CapacitorCamera (from `../../node_modules/@capacitor/camera`)"
@@ -27,7 +27,7 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   CameraMultiCapture:
-    :path: "../../../capacitor-plugins/packages/camera-multi-capture"
+    :path: "../../node_modules/camera-multi-capture"
   Capacitor:
     :path: "../../node_modules/@capacitor/ios"
   CapacitorApp:
@@ -53,6 +53,6 @@ SPEC CHECKSUMS:
   CapacitorKeyboard: 09fd91dcde4f8a37313e7f11bde553ad1ed52036
   CapacitorStatusBar: 6e7af040d8fc4dd655999819625cae9c2d74c36f
 
-PODFILE CHECKSUM: 07055d81bb0b42185e969ddf2f62c7b3037c515f
+PODFILE CHECKSUM: 43a9942025eacbd69db4b79db92a6d60585f7dd5
 
 COCOAPODS: 1.16.2
